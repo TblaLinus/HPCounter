@@ -17,6 +17,8 @@ namespace HPCounter.Model
 
         public Monster()
         {
+            Id = Guid.NewGuid();
+            IsDead = false;
             Conditions = new List<ICondition>();
         }
     }

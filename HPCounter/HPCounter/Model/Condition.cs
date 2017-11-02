@@ -11,6 +11,11 @@ namespace HPCounter.Model
         public Guid Id { get; set; }
         public Status Status { get; set; }
         public int Duration { get; set; }
+
+        public Condition()
+        {
+            Id = Guid.NewGuid();
+        }
     }
 
     public enum Status
