@@ -9,7 +9,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="900">
     <Grid>
-        <view:MonsterView DataContext="{Binding MonsterViewModel}"/>
-        <!--<TextBox Text="{Binding MonsterViewModel.test.Name}"/>-->
+        <view:MonsterView Height="100" Width="140" DataContext="{Binding MonsterViewModel}"/>
     </Grid>
 </Window>
