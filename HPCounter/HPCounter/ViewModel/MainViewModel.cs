@@ -9,19 +9,20 @@ namespace HPCounter.ViewModel
 {
     public class MainViewModel : ViewModelBase
     {
-        private IMonsterViewModel _monsterViewModel;
-        private Func<IMonsterViewModel> _monsterViewModelCreator;
+        public IMonsterViewModel MonsterViewModel { get; set; }
+        //private Func<IMonsterViewModel> _monsterViewModelCreator;
 
-        public IMonsterViewModel MonsterViewModel
-        {
-            get { return _monsterViewModel; }
-            private set { _monsterViewModel = value; OnPropertyChanged(); }
-        }
+        //public IMonsterViewModel MonsterViewModel
+        //{
+        //    get { return _monsterViewModel; }
+        //    private set { _monsterViewModel = value; OnPropertyChanged(); }
+        //}
 
-        public MainViewModel(Func<IMonsterViewModel> monsterViewModelCreator)
+        public MainViewModel(IMonsterViewModel monsterViewModel)
         {
-            _monsterViewModelCreator = monsterViewModelCreator;
-            MonsterViewModel = _monsterViewModelCreator();
+            MonsterViewModel = monsterViewModel;
+            //_monsterViewModelCreator = monsterViewModelCreator;
+            //MonsterViewModel = _monsterViewModelCreator();
         }
     }
 }

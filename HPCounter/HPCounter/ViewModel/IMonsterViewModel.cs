@@ -1,7 +1,10 @@
-﻿namespace HPCounter.ViewModel
+﻿using HPCounter.Model;
+using System.Collections.Generic;
+
+namespace HPCounter.ViewModel
 {
     public interface IMonsterViewModel
     {
-        int x { get; set; }
+        List<IMonster> Monsters { get; set; }
     }
 }

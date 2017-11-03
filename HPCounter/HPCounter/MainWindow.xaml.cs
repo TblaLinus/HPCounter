@@ -23,11 +23,11 @@ namespace HPCounter
     {
         private MainViewModel _viewModel;
 
-        public MainWindow()
+        public MainWindow(MainViewModel viewModel)
         {
-            //InitializeComponent();
-            //_viewModel = viewModel;
-            //DataContext = _viewModel;
+            InitializeComponent();
+            _viewModel = viewModel;
+            DataContext = _viewModel;
         }
     }
 }
