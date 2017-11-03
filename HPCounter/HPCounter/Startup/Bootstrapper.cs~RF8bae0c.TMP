@@ -15,8 +15,6 @@ namespace HPCounter.Startup
             builder.RegisterType<Condition>().As<ICondition>();
             builder.RegisterType<Monster>().As<IMonster>();
 
-            builder.RegisterType<MonsterViewModel>().As<IMonsterViewModel>();
-
             return builder.Build();
         }
     }

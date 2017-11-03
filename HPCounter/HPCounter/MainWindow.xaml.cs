@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HPCounter.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,13 @@ namespace HPCounter
     /// </summary>
     public partial class MainWindow : Window
     {
+        private MainViewModel _viewModel;
+
         public MainWindow()
         {
-            InitializeComponent();
+            //InitializeComponent();
+            //_viewModel = viewModel;
+            //DataContext = _viewModel;
         }
     }
 }

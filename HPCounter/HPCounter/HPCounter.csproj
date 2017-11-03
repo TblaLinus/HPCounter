@@ -61,11 +61,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Factories\MonsterFactory.cs" />
     <Compile Include="Model\IMonster.cs" />
     <Compile Include="Startup\Bootstrapper.cs" />
+    <Compile Include="ViewModel\IMonsterViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
-    <Compile Include="ViewModel\MosterViewModel.cs" />
+    <Compile Include="ViewModel\MonsterViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="View\MonsterView.xaml.cs">
       <DependentUpon>MonsterView.xaml</DependentUpon>

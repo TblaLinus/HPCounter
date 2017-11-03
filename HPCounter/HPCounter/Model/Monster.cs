@@ -15,9 +15,12 @@ namespace HPCounter.Model
         public bool IsDead { get; set; }
         public List<ICondition> Conditions { get; set; }
 
-        public Monster()
+        public Monster(string name, int maxHP)
         {
             Id = Guid.NewGuid();
+            Name = name;
+            MaxHP = maxHP;
+            CurrentHP = maxHP;
             IsDead = false;
             Conditions = new List<ICondition>();
         }

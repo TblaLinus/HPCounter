@@ -1,5 +1,4 @@
-﻿using HPCounter.Factories;
-using HPCounter.Model;
+﻿using HPCounter.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,19 +7,21 @@ using System.Threading.Tasks;
 
 namespace HPCounter.ViewModel
 {
-    class MainViewModel : ViewModelBase
+    public class MainViewModel : ViewModelBase
     {
-        public List<IMonster> Monsters;
+        private IMonsterViewModel _monsterViewModel;
+        private Func<IMonsterViewModel> _monsterViewModelCreator;
 
-        public MainViewModel()
+        public IMonsterViewModel MonsterViewModel
         {
-            Monsters = new List<IMonster>();
+            get { return _monsterViewModel; }
+            private set { _monsterViewModel = value; OnPropertyChanged(); }
+        }
 
-            //temp
-            Monsters.Add(MonsterFactory.CreateMonster("Monster1", 10));
-            Monsters.Add(MonsterFactory.CreateMonster("Monster2", 10));
-            Monsters.Add(MonsterFactory.CreateMonster("Monster3", 10));
-            Monsters.Add(MonsterFactory.CreateMonster("Monster4", 10));
+        public MainViewModel(Func<IMonsterViewModel> monsterViewModelCreator)
+        {
+            _monsterViewModelCreator = monsterViewModelCreator;
+            MonsterViewModel = _monsterViewModelCreator();
         }
     }
 }
