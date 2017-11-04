@@ -9,6 +9,18 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="900">
     <Grid>
-        <view:MonsterView Height="100" Width="140" DataContext="{Binding MonsterViewModel}"/>
+        <ListBox Name="CardList" Width="800" Margin="10" HorizontalAlignment="Left"
+                     BorderThickness="0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ItemsSource="{ Binding MonsterViewModel.Monsters}">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel IsItemsHost="True" Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <view:MonsterView Height="100" Width="140" DataContext="{Binding}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Window>
